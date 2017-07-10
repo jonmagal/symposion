@@ -38,7 +38,7 @@ class Conference(models.Model):
     the full conference for a specific year, e.g. US PyCon 2012.
     """
 
-    title = models.CharField(_("Title"), max_length=100)
+    title = models.CharField(_("Title"), max_length=255)
 
     # when the conference runs
     start_date = models.DateField(_("Start date"), null=True, blank=True)
