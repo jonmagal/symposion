@@ -21,6 +21,9 @@ class Event(models.Model):
     title = models.CharField(_("Title"), max_length=255)
     slug = models.SlugField(max_length=150, unique=True, editable=False)
 
+    def __str__(self):
+        return self.title
+    
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = orig = slugify(self.title)
