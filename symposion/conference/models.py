@@ -19,7 +19,7 @@ class Conference(models.Model):
     """
 
     title = models.CharField(_("Title"), max_length=255)
-    abbrv = models.CharField(max_length=50)
+    abbrv = models.CharField(max_length=50, null=True)
 
     # when the conference runs
     start_date = models.DateField(_("Start date"), null=True, blank=True)
