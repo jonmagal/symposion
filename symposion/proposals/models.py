@@ -85,7 +85,7 @@ class ProposalBase(models.Model):
 
     kind = models.ForeignKey(ProposalKind, verbose_name=_("Kind"))
 
-    title = models.CharField(max_length=100, verbose_name=_("Title"))
+    title = models.TextField(verbose_name=_("Title"))
     description = models.TextField(
         _("Brief Description"),
         max_length=400,  # @@@ need to enforce 400 in UI

@@ -184,7 +184,7 @@ class SlotRoom(models.Model):
 class Presentation(models.Model):
 
     slot = models.OneToOneField(Slot, null=True, blank=True, related_name="content_ptr", verbose_name=_("Slot"))
-    title = models.CharField(max_length=100, verbose_name=_("Title"))
+    title = models.TextField(verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
     description_html = models.TextField(blank=True)
     abstract = models.TextField(verbose_name=_("Abstract"))
