@@ -69,7 +69,7 @@ class SlotKind(models.Model):
     """
 
     schedule = models.ForeignKey(Schedule, verbose_name=_("schedule"))
-    label = models.CharField(max_length=50, verbose_name=_("Label"))
+    label = models.CharField(max_length=255, verbose_name=_("Label"))
 
     def __str__(self):
         return self.label
