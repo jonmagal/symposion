@@ -217,6 +217,11 @@ class Presentation(models.Model):
             if speaker.user:
                 yield speaker
 
+    def all_speakers(self):
+        yield self.speaker
+        for speaker in self.additional_speakers.all():
+            yield speaker
+            
     def __str__(self):
         return "#%s %s (%s)" % (self.number, self.title, self.speaker)
 
