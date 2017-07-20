@@ -219,7 +219,7 @@ class Presentation(models.Model):
 
     def all_speakers(self):
         yield self.speaker
-        for speaker in self.additional_speakers.all():
+        for speaker in self.proposal_base.additional_speakers.all().order_by('additionalspeaker__order'):
             yield speaker
             
     def __str__(self):
