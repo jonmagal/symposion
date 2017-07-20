@@ -192,11 +192,13 @@ class AdditionalSpeaker(models.Model):
     speaker = models.ForeignKey(Speaker, verbose_name=_("Speaker"))
     proposalbase = models.ForeignKey(ProposalBase, verbose_name=_("Proposalbase"))
     status = models.IntegerField(choices=SPEAKING_STATUS, default=SPEAKING_STATUS_PENDING, verbose_name=_("Status"))
+    order = models.PositiveSmallIntegerField()
 
     class Meta:
         unique_together = ("speaker", "proposalbase")
         verbose_name = _("Addtional speaker")
         verbose_name_plural = _("Additional speakers")
+        ordering = ['-order', ]
 
     def __str__(self):
         if self.status is self.SPEAKING_STATUS_PENDING:
